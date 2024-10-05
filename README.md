@@ -14,6 +14,11 @@ Auth microservice
 4. execute prisma migration `npx prisma generate dev`
 5. run with command `npm run start:dev`
 
+# When using docker and prisma remember to add and update this two lines in the package.json
+
+"start:dev": "npm run prisma:docker && nest start --watch",
+"prisma:docker": "npx prisma generate",
+
 # PRISMA
 
 1. Prisma
@@ -28,7 +33,13 @@ npm install prisma --save-dev
 npx prisma init
 ```
 
-3. Prisma generate table
+3. Generate the client in this case of mongoDB
+
+```
+npx prisma generate
+```
+
+<!-- 3. Prisma generate table
 
 ```
 npx prisma migrate dev --name init
@@ -38,7 +49,7 @@ npx prisma migrate dev --name init
 
 ```
 npm install @prisma/client
-```
+``` -->
 
 ## Instalations
 
@@ -69,7 +80,19 @@ npm i --save nats
 5. class validator class transform
 
 ```
-npm i class-validator class-transform
+npm i class-validator class-transformer
+```
+
+6. bcryptjs
+
+```
+npm i bcryptjs
+```
+
+7. @nestjs/jwt
+
+```
+npm i --save @nestjs/jwt
 ```
 
 ## Test
